@@ -13,6 +13,11 @@ Before start, you will need to obtain `api-id` and `api-hash` as described in ht
 And then to start the Telegram Bot API all you need to do is
 `docker run -d -p 8081:8081 --name=telegram-bot-api --restart=always -v telegram-bot-api-data:/var/lib/telegram-bot-api -e TELEGRAM_API_ID=<api_id> -e TELEGRAM_API_HASH=<api-hash> aiogram/telegram-bot-api:latest`
 
+## 设置Bot webhook地址(docker部署完成后，变量设置好api_id和api_hash，最后设置webhook地址)
+访问 https://api.telegram.org/bot{token}/setWebhook?url=https://{domain}/inlineQuery
+
+检查webhook是否正常 https://api.telegram.org/bot{token}/getWebhookInfo
+
 ## Configuration
 
 Container can be configured via environment variables
